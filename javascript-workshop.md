@@ -77,9 +77,51 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('Atthawut Buarean')">ปุ่มที่ 1</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2">ปุ่มที่ 2</button>
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3">ปุ่มที่ 3</button>
+
+    <!-- กล่องข้อความและปุ่มแสดงข้อความ -->
+    <input type="text" id="textBox" placeholder="พิมพ์ข้อความที่นี่">
+    <button onclick="showText()">แสดงข้อความ</button>
+    
+    <p id="output"></p>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            alert('26/2/2568');
+        };
+
+        document.getElementById('btn3').onclick = function() {
+            alert('00.00');
+        };
+
+        function showText() {
+            let text = document.getElementById('textBox').value;
+            document.getElementById('output').innerText = text;
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 1]
-  
+![F1](https://github.com/user-attachments/assets/cfdd2029-75dc-4bb9-a2e2-a62ca8e3c587)
+
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 
@@ -135,9 +177,38 @@ let person = {
 ### บันทึกผลการทดลอง 2.1
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ข้อมูลนักศึกษา</title>
+</head>
+<body>
+    <h2>ข้อมูลนักศึกษา</h2>
+    
+    <p><strong>รหัสนักศึกษา:</strong> <span id="studentID"></span></p>
+    <p><strong>ชื่อนักศึกษา:</strong> <span id="studentName"></span></p>
+    <p><strong>คะแนนสอบกลางภาค:</strong> <span id="midtermScore"></span></p>
+    <p><strong>คะแนนสอบปลายภาค:</strong> <span id="finalScore"></span></p>
+
+    <script>
+        let student = {
+            id: "67030359",
+            name: "Atthawut Buarean",
+            midterm: 100,
+            final: 100
+        };
+
+        document.getElementById("studentID").innerText = student.id;
+        document.getElementById("studentName").innerText = student.name;
+        document.getElementById("midtermScore").innerText = student.midterm;
+        document.getElementById("finalScore").innerText = student.final;
+    </script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 2.1]
-
+![F2 1](https://github.com/user-attachments/assets/a15a250d-b5bc-4db0-a300-81c610df15b8)
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
 
